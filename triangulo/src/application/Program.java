@@ -15,7 +15,15 @@ public class Program {
 		xA = sc.nextDouble();
 		xB = sc.nextDouble();
 		xC = sc.nextDouble();
+		
+		System.out.println("Enter the measures of triangule Y:");
+		yA = sc.nextDouble();
+		yB = sc.nextDouble();
+		yC = sc.nextDouble();
 
+		double p = (xA + xB + xC) / 2.0;
+		double areaX = Math.sqrt(p * (p - xA) * (p - xB) * (p - xC));
+		
 		sc.close();
 
 	}
