@@ -114,7 +114,7 @@ public class ChessMatch {
 			capturedPieces.add(capturedPiece);
 		}
 
-		// #specialmoce castling kingside rook
+		// #specialmove castling kingside rook
 		if (p instanceof King && target.getColumn() == source.getColumn() + 2) {
 			Position sourceT = new Position(source.getRow(), source.getColumn() + 3);
 			Position targetT = new Position(source.getRow(), source.getColumn() + 1);
@@ -123,7 +123,7 @@ public class ChessMatch {
 			rook.increaseMoveCount();
 		}
 
-		// #specialmoce castling queenside rook
+		// #specialmove castling queenside rook
 		if (p instanceof King && target.getColumn() == source.getColumn() - 2) {
 			Position sourceT = new Position(source.getRow(), source.getColumn() - 4);
 			Position targetT = new Position(source.getRow(), source.getColumn() - 1);
