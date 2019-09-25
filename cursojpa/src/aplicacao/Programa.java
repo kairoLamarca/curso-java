@@ -14,12 +14,20 @@ public class Programa {
 		Pessoa p2 = new Pessoa(null, "Joaquim Torres", "joaquim@gmail.com");
 		Pessoa p3 = new Pessoa(null, "Ana Maria", "ana@gmail.com");
 		
+		//Cria conexão
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
 		EntityManager em = emf.createEntityManager();
 		
-		System.out.println(p1);
-		System.out.println(p2);
-		System.out.println(p3);
+		em.getTransaction().begin();
+		
+		//Salva no BD
+		em.persist(p1);
+		em.persist(p2);
+		em.persist(p3);
+		
+		em.getTransaction().commit();
+		System.out.println("Pronto!");
+		
 
 	}
 
