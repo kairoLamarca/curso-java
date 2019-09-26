@@ -20,20 +20,21 @@ public class Programa {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
 		EntityManager em = emf.createEntityManager();
 		
-		Pessoa p = em.find(Pessoa.class, 2);
 		
-		System.out.println(p);
-		
-		/*
 		em.getTransaction().begin();
-		
+		/*
 		//Salva no BD
 		em.persist(p1);
 		em.persist(p2);
 		em.persist(p3);
+		*/				
+		
+		Pessoa p = em.find(Pessoa.class, 2);		
+		System.out.println(p);
+		
+		em.remove(p);
 		
 		em.getTransaction().commit();
-		*/
 		
 		System.out.println("Pronto!");
 		em.close();
